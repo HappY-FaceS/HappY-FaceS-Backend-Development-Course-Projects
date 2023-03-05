@@ -1,6 +1,7 @@
-import searching from './searchingalgo.js'
+import searching, {linearSearch ,binarySearch} from './searchingalgo.js'
 // const x = require('./searchingalgo.js')
 
+console.log(linearSearch([1,2,3,4,3,7],6));
 console.log(searching);
 
 

@@ -1,4 +1,4 @@
-function linearSearch(arr, x) {
+export function linearSearch(arr, x) {
     for(let i = 0; i < arr.length; i++) {
         if(arr[i] === x) {
             return i;
@@ -7,13 +7,12 @@ function linearSearch(arr, x) {
     return NaN;
 }
 
-function binarySearch(arr, x) {
+export function binarySearch(arr, x) {
     // some impl
 }
 console.log("Ending searching");
 
-module.exports = {
-    linear: linearSearch,
-    binary : binarySearch
-    
+export default function fun()
+{
+    console.log("fun");
 }
