@@ -15,7 +15,26 @@ app.use(bodyParser.json());
 
 let blogsList=[];
 
-app.get('/blogs',(req,res)=>{
+
+function logger(req,res,next){
+    console.log(req.url);
+    console.log(req.body);
+    next();
+}
+
+// we can also implement middleware for all API calls manually using app.use . For specific calls , we have to mention the middleware into the API call routes
+
+//app.use(logger); 
+//app.use(inAuthenticated);
+
+
+
+function isAuthenticated(req,res,next){
+    console.log("Yes , User is autheticated !");
+    next();
+}
+
+app.get('/blogs',logger,isAuthenticated,(req,res)=>{
 
     // console.log(req.body); 
 
